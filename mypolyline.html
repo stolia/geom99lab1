@@ -1,0 +1,73 @@
+<html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>ArcGIS Maps SDK for JavaScript Tutorials: Add a point, line, and polygon</title>
+  <style>
+    html, body, #viewDiv {
+        padding: 10;
+      margin: 8;
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+  <link rel="stylesheet" href="https://js.arcgis.com/4.25/esri/themes/light/main.css">
+  <script src="https://js.arcgis.com/4.25/"></script>
+  <script>
+
+  require([
+    "esri/config",
+    "esri/Map",
+    "esri/views/MapView",
+
+    "esri/Graphic",
+    "esri/layers/GraphicsLayer"
+
+    ], function(esriConfig,Map, MapView, Graphic, GraphicsLayer) {
+
+  esriConfig.apiKey = "YOUR_API_KEY";
+
+  const map = new Map({
+    basemap: "hybrid" //Basemap layer service
+  });
+
+  const view = new MapView({
+    map: map,
+    center: [79.0193,30.0668], //Longitude, latitude (Uttarakhand, India)
+    zoom: 6,
+    container: "viewDiv"
+ });
+
+ const graphicsLayer = new GraphicsLayer();
+ map.add(graphicsLayer);
+
+    // Create a line geometry
+ const polyline = {
+    type: "polyline",
+    paths: [
+        [78.04541853402111,30.326051934437103], //Longitude, latitude (Dehradun)
+        [78.29061880837259,30.12575902407994], //Longitude, latitude (Rishikesh)
+        [78.06308524564639,29.92117892918887]  //Longitude, latitude (Haridwar)
+    ]
+ };
+ const simpleLineSymbol = {
+    type: "simple-line",
+    color: [255,0,0], // Red
+    width: 1
+  
+ };
+
+ const polylineGraphic = new Graphic({
+    geometry: polyline,
+    symbol: simpleLineSymbol
+ });
+ graphicsLayer.add(polylineGraphic);
+
+ });
+</script>
+</head>
+<body>
+  <div id="viewDiv"></div>
+</body>
+</html>

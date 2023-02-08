@@ -1,0 +1,190 @@
+<html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>ArcGIS Maps SDK for JavaScript Tutorials: Add a point, line, and polygon</title>
+  <style>
+    html, body, #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+  <link rel="stylesheet" href="https://js.arcgis.com/4.25/esri/themes/light/main.css">
+  <script src="https://js.arcgis.com/4.25/"></script>
+  <script>
+
+  require([
+    "esri/config",
+    "esri/Map",
+    "esri/views/MapView",
+
+    "esri/Graphic",
+    "esri/layers/GraphicsLayer"
+
+    ], function(esriConfig,Map, MapView, Graphic, GraphicsLayer) {
+
+  esriConfig.apiKey = "YOUR_API_KEY";
+
+  const map = new Map({
+    basemap: "hybrid" //Basemap layer service
+  });
+
+  const view = new MapView({
+    map: map,
+    center: [78.98338677918906,31.100085158708353], //Longitude, latitude
+    zoom: 6,
+    container: "viewDiv"
+ });
+
+ const graphicsLayer = new GraphicsLayer();
+ map.add(graphicsLayer);
+
+ // Create a polygon geometry
+ const polygon = {
+    type: "polygon",
+    rings: [
+    [
+              78.98338677918906,
+              31.100085158708353
+            ],
+            [
+              78.3906226674415,
+              31.2672031161393
+            ],
+            [
+              77.93931362781524,
+              31.151980917565893
+            ],
+            [
+              77.6968192184637,
+              30.75917826865863
+            ],
+            [
+              77.83153833476973,
+              30.509957031553483
+            ],
+            [
+              77.61598774867986,
+              30.411250882333476
+            ],
+            [
+              77.95278553944547,
+              30.271730978718452
+            ],
+            [
+              77.75070686498697,
+              29.93373909047645
+            ],
+            [
+              77.81806642313938,
+              29.682414839480884
+            ],
+            [
+              77.92584171618489,
+              29.705820463643064
+            ],
+            [
+              77.98646531852228,
+              29.541866714780525
+            ],
+            [
+              78.35694288836476,
+              29.79938839703182
+            ],
+            [
+              78.94970700011226,
+              29.442193374973783
+            ],
+            [
+              78.78130810472942,
+              29.3013113382827
+            ],
+            [
+              80.02745993056294,
+              28.771274697952947
+            ],
+            [
+              80.12849926779222,
+              29.03663327290387
+            ],
+            [
+              80.31710603062157,
+              29.28956237310642
+            ],
+            [
+              80.2564824282831,
+              29.448059226516975
+            ],
+            [
+              80.40467345622056,
+              29.64144188217064
+            ],
+            [
+              80.3777296329589,
+              29.770157801553353
+            ],
+            [
+              80.55286448415694,
+              29.846139589035985
+            ],
+            [
+              80.57980830741849,
+              29.974592497633665
+            ],
+            [
+              80.68084764464777,
+              29.98626181570225
+            ],
+            [
+              81.04458925867516,
+              30.213539043465943
+            ],
+            [
+              79.72434191887294,
+              31.00775599829369
+            ],
+            [
+              79.39428008392349,
+              31.06547222300142
+            ],
+            [
+              79.09789802804971,
+              31.4397728283853
+            ],
+            [
+              78.87561148614361,
+              31.295986719398996
+            ],
+            [
+              78.98338677918906,
+              31.100085158708353
+            ]
+    ]
+ };
+
+ const simpleFillSymbol = {
+    type: "simple-fill",
+    color: [159, 43, 104, 0.8],  // Pink, opacity 80%
+    outline: {
+        color: [255, 255, 255],
+        width: 1
+    }
+ };
+
+ const polygonGraphic = new Graphic({
+    geometry: polygon,
+    symbol: simpleFillSymbol,
+
+ });
+ graphicsLayer.add(polygonGraphic);
+
+ });
+</script>
+</head>
+<body>
+  <div id="viewDiv"></div>
+</body>
+</html>
