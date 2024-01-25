@@ -1,4 +1,4 @@
-// This creates  polyline showing the path of my flight to canada from India via Maldives, and Doha
+// This creates  polyline showing the path of my flight to canada from India via Greece, and France
 // source: https://developers.google.com/maps/documentation/javascript/examples/polyline-simple
 
  function initMap() {
