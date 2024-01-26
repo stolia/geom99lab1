@@ -50,7 +50,7 @@
   
   flightPath.setMap(map);
 
-const coordMapType = new CoordMapType(new google.maps.Size(256, 256));
+
 
 map.overlayMapTypes.insertAt(0, coordMapType);
 }
