@@ -50,9 +50,6 @@
   
   flightPath.setMap(map);
 
-
-
-map.overlayMapTypes.insertAt(0, coordMapType);
 }
   
 
