@@ -1,12 +1,15 @@
 URL 1: Developers Details Item Page
-https://developers.arcgis.com/layers/3226b7ae87cf4f1a8bb3b36cac8108fb/
+https://developers.arcgis.com/layers/0fe30696776a425d81d834ddf519b473/
 
 
 
 URL 2: ArcGIS Online Items Page
-https://fleming.maps.arcgis.com/home/item.html?id=3226b7ae87cf4f1a8bb3b36cac8108fb.
-
+https://fleming.maps.arcgis.com/home/item.html?id=0fe30696776a425d81d834ddf519b473
 
 
 URL 3: REST API
-https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/Geocommunity_Project_Listings/FeatureServer
+
+https://services1.arcgis.com/pMeXRvgWClLJZr3s/ArcGIS/rest/services/geom66_tree_collection/FeatureServer
+
+
+https://fleming.maps.arcgis.com/home/item.html?id=0fe30696776a425d81d834ddf519b473&view=service
